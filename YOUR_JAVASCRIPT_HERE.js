@@ -17,14 +17,12 @@ function rest(hero) {
     return hero
 }
 
-console.log(document.getElementById('inn'));
-
 document.getElementById('inn').onclick = function(event) {
     hero.health = 10
 }
 
-function pickUpItem(params) {
-    
+function pickUpItem(hero, weapon) {
+    hero.inventory.push(weapon)
 }
 
 function equipWeapon(params) {
