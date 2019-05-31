@@ -18,11 +18,18 @@ function rest(hero) {
 }
 
 document.getElementById('inn').onclick = function(event) {
-    hero.health = 10
+    rest(hero)
 }
 
 function pickUpItem(hero, weapon) {
     hero.inventory.push(weapon)
+}
+
+document.getElementById('dagger').onclick = function(event) {
+    pickUpItem(hero, {
+        type: 'dagger',
+        damage: 2
+    })
 }
 
 function equipWeapon(params) {
