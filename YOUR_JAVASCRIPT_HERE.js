@@ -9,8 +9,12 @@ const hero = {
     }
 }
 
-function rest(params) {
-    
+function rest(hero) {
+    if (hero.health === 10) {
+        alert('Health already 10!')
+    }
+    hero.health = 10
+    return hero
 }
 
 function pickUpItem(params) {
