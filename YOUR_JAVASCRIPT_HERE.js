@@ -38,3 +38,7 @@ function equipWeapon(hero) {
     }
     return hero
 }
+
+document.getElementById('bag').onclick = function(event) {
+    equipWeapon(hero)
+}
