@@ -8,3 +8,15 @@ const hero = {
         damage: 2
     }
 }
+
+function rest(params) {
+    
+}
+
+function pickUpItem(params) {
+    
+}
+
+function equipWeapon(params) {
+    
+}
