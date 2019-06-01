@@ -1,22 +1,68 @@
-button {
+button, input {
     display: block;
-    margin: 20px auto;
+    margin: 0 auto;
 }
 
-img {
-    width: 100px;
-    height: 100px;
+.images img {
+    width: 80px;
+    height: 80px;
     padding: 10px;
-    margin: 20px;
+    margin: 0 20px;
     cursor: pointer;
 }
 
 .images {
     display: flex;
     justify-content: center;
+    
+}
+
+#heroImg {
+    display: block;
+    margin: 50px auto;
+}
+
+#hero2 #heroImg {
+    width: 236px;
+    height: 236px;
 }
 
 span {
     font-weight: normal;
 }
 
+#heroStatus {
+    margin-left: 70px;
+}
+
+input {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 250px;
+}
+
+/* #inventory {
+    max-height: 80px;
+    overflow: scroll;
+    height: 900px;
+} */
+
+/* #weapon {
+    display: inline-block;
+    margin-left: 7px;
+}
+
+#labelWeapon {
+    display: flex;
+} */
+
+.players {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#bigSize {
+    font-size: 50px;
+    margin-top: 20%;
+}

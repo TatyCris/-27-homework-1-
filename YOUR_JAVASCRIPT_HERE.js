@@ -1,28 +1,11 @@
 // Hero object ----------
 const hero = {
-    name: 'Jose',
+    name: '',
     heroic: true,
-    inventory: [
-        {
-            type: 'dagger',
-            damage: 2
-        },
-        {
-            type: 'dagger',
-            damage: 2
-        },
-        {
-            type: 'dagger',
-            damage: 2
-        },
-        {
-            type: 'dagger',
-            damage: 2
-        }
-    ],
+    inventory: [],
     health: 10,
     weapon: {
-        type: 'dagger',
+        type: 'punch',
         damage: 2
     }
 }
@@ -41,52 +24,57 @@ function pickUpItem(hero, weapon) {
 }
 
 function equipWeapon(hero) {
-    if (hero.inventory.length !== 0) {
-        hero.weapon = hero.inventory[0]  
+    if (hero.inventory.length > 0) {
+        hero.weapon = hero.inventory.shift() 
     }
     return hero
 }
 
 // UI ----------
-document.getElementById('inn').onclick = function(event) {
+document.getElementById('inn').onclick = () => {
     rest(hero)
+    displayStats()
 }
 
-document.getElementById('dagger').onclick = function(event) {
+document.getElementById('dagger').onclick = () => {
     pickUpItem(hero, {
         type: 'dagger',
         damage: 2
     })
+    displayStats()
 }
 
-document.getElementById('bag').onclick = function(event) {
+document.getElementById('bag').onclick = () => {
     equipWeapon(hero)
+    displayStats()
 }
 
 // Update Hero name ----------
 const form = document.getElementById('nameForm')
 form.onsubmit = () => {
-    const inputName = form.getElementsByTagName('input')[0];    
-    hero.name = inputName.value;
-    displayStats();
-    inputName.value = '';
+    hero.name = ''
+    const inputName = form.getElementsByTagName('input')[0]    
+    hero.name = inputName.value
+    displayStats()
+    inputName.value = ''
     
-    return false;   
+    return false
 }
 
 // Display Status ----------
-function displayStats() {
-    const name = document.getElementById('name')
-    const health = document.getElementById('health')
-    const weapon = document.getElementById('weapon')
-    const inventory = document.getElementById('inventory')
+const name = document.getElementById('name')
+const health = document.getElementById('health')
+const weapon = document.getElementById('weapon')
+const inventory = document.getElementById('inventory')
 
-    name.appendChild(document.createElement("span")).innerHTML = hero.name
-    health.appendChild(document.createElement("span")).innerHTML = hero.health
-    weapon.appendChild(document.createElement("span")).innerHTML = hero.weapon.type + '<br>damage: ' + hero.weapon.damage 
+function displayStats() {
+    name.innerHTML = hero.name
+    health.innerHTML = hero.health
+    weapon.innerHTML = hero.weapon.type + '<br>damage: ' + hero.weapon.damage
+    inventory.innerHTML = ''
     hero.inventory.forEach(item => {
-        const li = document.createElement('li');
-        li.innerHTML = item.type + ' / ' + item.damage;
-        inventory.appendChild(li);       
-    });
+        const li = document.createElement('li')
+        li.innerHTML = item.type + ' / ' + item.damage
+        inventory.appendChild(li)       
+    })
 }

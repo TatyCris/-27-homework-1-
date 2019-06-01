@@ -8,24 +8,56 @@
 <body>
 
   <!-- 👍 YOUR HTML HERE 👍 -->
-  <form id="nameForm">
-    <input id="heroName" placeholder="Name of your hero" type="text" required>
-    <button type="submit">Update</button>
-  </form>
+  <div class="players">
+    <div id="hero1">
+      <form id="nameForm">
+        <input id="heroName" placeholder="Name of your hero" type="text" required>
+        <button type="submit">Update</button>
+      </form>
+      
+      <img id="heroImg" src="./img/hero.png" alt="hero">
+    
+      <div class="images">
+        <img id="inn" src="./img/inn.png" alt="inn">
+        <img id="dagger" src="./img/dagger.png" alt="dagger">
+        <img id="bag" src="./img/bag.png" alt="bag">
+      </div>
+    
+      <div id="heroStatus">
+        <h1>Hero Name: <span id="name"></span></h1>
+        <h3>Health: <span id="health"></span></h3>
+        <h3 id="labelWeapon">Weapon: <span id="weapon"></span></h3>
+        <h3>Inventory: </h3>
+        <ul id="inventory"></ul>
+      </div>
+    </div>
 
-  <div id="heroStatus">
-    <h1 id="name">Hero Name: </h1>
-    <h3 id="health">Health: </h3>
-    <h3 id="weapon">Weapon: </h3>
-    <h3>Inventory: </h3>
-    <ul id="inventory"> Type / Damage</ul>
+    <span id="bigSize">&#215;</span>
+  
+    <div id="hero2">
+      <form id="nameForm">
+        <input id="heroName" placeholder="Name of your hero" type="text" required>
+        <button type="submit">Update</button>
+      </form>
+      
+      <img id="heroImg" src="./img/hero2.png" alt="hero">
+    
+      <div class="images">
+        <img id="inn" src="./img/inn.png" alt="inn">
+        <img id="dagger" src="./img/dagger.png" alt="dagger">
+        <img id="bag" src="./img/bag.png" alt="bag">
+      </div>
+    
+      <div id="heroStatus">
+        <h1>Hero Name: <span id="name"></span></h1>
+        <h3>Health: <span id="health"></span></h3>
+        <h3 id="labelWeapon">Weapon: <span id="weapon"></span></h3>
+        <h3>Inventory: </h3>
+        <ul id="inventory"></ul>
+      </div>
+    </div>
   </div>
 
-  <div class="images">
-    <img id="inn" src="./img/inn.png" alt="inn">
-    <img id="dagger" src="./img/dagger.png" alt="dagger">
-    <img id="bag" src="./img/bag.png" alt="bag">
-  </div>
 
   <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
   <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
