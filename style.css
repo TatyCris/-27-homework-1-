@@ -1,0 +1,22 @@
+button {
+    display: block;
+    margin: 20px auto;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+}
+
+span {
+    font-weight: normal;
+}
+

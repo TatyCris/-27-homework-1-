@@ -3,14 +3,29 @@
     <meta charset="utf-8">
     <title>Mocha Tests</title>
     <link href="lib/mocha.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
   <!-- 👍 YOUR HTML HERE 👍 -->
-  <img id="inn" src="./img/inn.png" alt="inn">
-  <img id="dagger" src="./img/dagger.png" alt="dagger">
-  <img id="bag" src="./img/bag.png" alt="bag">
+  <form id="nameForm">
+    <input id="heroName" placeholder="Name of your hero" type="text" required>
+    <button type="submit">Update</button>
+  </form>
+
+  <div id="heroStatus">
+    <h1 id="name">Hero Name: </h1>
+    <h3 id="health">Health: </h3>
+    <h3 id="weapon">Weapon: </h3>
+    <h3>Inventory: </h3>
+    <ul id="inventory"> Type / Damage</ul>
+  </div>
+
+  <div class="images">
+    <img id="inn" src="./img/inn.png" alt="inn">
+    <img id="dagger" src="./img/dagger.png" alt="dagger">
+    <img id="bag" src="./img/bag.png" alt="bag">
+  </div>
 
   <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
   <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
