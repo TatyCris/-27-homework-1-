@@ -36,12 +36,20 @@ function pickUpItem(hero, weapon) {
 
 function equipWeapon(hero) {
     if (hero.inventory.length > 0) {
-        hero.weapon = hero.inventory.shift() 
+        hero.weapon = hero.inventory.shift()
     }
     return hero
 }
 
 // UI player1 ----------
+document.getElementById('heroImg2').onclick = () => {
+    hero2.health = hero2.health - hero.weapon.damage
+    hero.weapon.type = ''
+    hero.weapon.damage = 0
+    displayStats()    
+    displayStats2()
+}
+
 document.getElementById('inn').onclick = () => {
     rest(hero)
     displayStats()
@@ -61,6 +69,14 @@ document.getElementById('bag').onclick = () => {
 }
 
 // UI player2 ----------
+document.getElementById('heroImg').onclick = () => {
+    hero.health = hero.health - hero2.weapon.damage
+    hero2.weapon.type = ''
+    hero2.weapon.damage = 0
+    displayStats()    
+    displayStats2()
+}
+
 document.getElementById('inn2').onclick = () => {
     rest(hero2)
     displayStats2()
